@@ -48,11 +48,10 @@ Frontend will run at: http://localhost:5173
 ## 📸 Screenshots
 
 ### Login Page
-![image_alt](https://github.com/abhi3184/user_authentication/blob/41cacb1170758bae22cd4147681a9f4469f924ac/screenshots/login.png)
+![Login Page](./screenshots/login.png)
 
 ### Dashboard
-[![Dashboard](screenshots/login.png)](https://github.com/abhi3184/user_authentication/blob/dc4fbb648529c93a9820127123f8f9db850510ea/screenshots/dashboard.png)
-
+![Dashboard](./screenshots/login.png)
 ### ForgetPassword Flow
 ![ForgetPassword](./screenshots/forgetPassword.png)
 ![VerifyOtps](./screenshots/verify_otps.png)
@@ -64,11 +63,6 @@ Frontend will run at: http://localhost:5173
 ![Registration](./screenshots/registration_send_mobile_otp.png)
 ![Registration](./screenshots/verify_mobile_otp.png)
 ![SetPassword](./screenshots/setpassword.png)
-
-
-![image_url](https://github.com/abhi3184/user_authentication/blob/faee88f634a4efab747f3933b2c2af8179e7c62c/dashboard.png)
-
-
 
 
 
