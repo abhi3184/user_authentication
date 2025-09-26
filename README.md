@@ -51,7 +51,7 @@ Frontend will run at: http://localhost:5173
 ![Login Page](screenshots/login.png)
 
 ### Dashboard
-![Dashboard](screenshots/login.png)
+[![Dashboard](screenshots/login.png)](https://github.com/abhi3184/user_authentication/blob/dc4fbb648529c93a9820127123f8f9db850510ea/screenshots/dashboard.png)
 
 ### ForgetPassword Flow
 ![ForgetPassword](./screenshots/forgetPassword.png)
