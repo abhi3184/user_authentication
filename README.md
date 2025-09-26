@@ -47,10 +47,26 @@ Frontend will run at: http://localhost:5173
 
 ## 📸 Screenshots
 
-### 🔐 Login Page
+### Login Page
 ![Login Page](./screenshots/login.png)
 
-### 📊 Dashboard
+### Dashboard
 ![Dashboard](./screenshots/dashboard.png)
+
+### ForgetPassword Flow
+![ForgetPassword](./screenshots/forgetPassword.png)
+![VerifyOtps](./screenshots/verify_otps.png)
+![SetPassword](./screenshots/setpassword.png)
+
+### Registration
+![Registration](./screenshots/registration_send_otp.png)
+![Registration](./screenshots/registration_verify_email_otp.png)
+![Registration](./screenshots/registration_send_mobile_otp.png)
+![Registration](./screenshots/verify_mobile_otp.png)
+![SetPassword](./screenshots/setpassword.png)
+
+
+
+
 
 
