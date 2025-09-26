@@ -45,6 +45,9 @@ npm install
 npm run dev
 Frontend will run at: http://localhost:5173
 
+## 📸 Screenshots
+
+### Login Page
 https://github.com/abhi3184/user_authentication/blob/main/screenshots/login.png?raw=true
 
 ### Dashboard
