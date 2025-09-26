@@ -10,11 +10,10 @@ from sqlalchemy import select
 from utils.HashPasswor import hash_password, verify_password
 from schemas.index import User
 from repository.index import OTPRepository, ForgotPassRepository,UserRegistrationRepository
-from sqlalchemy.orm import Session
 
 class userRegistrationService:
     @staticmethod
-    def send_email_otp(db: Session,payload: EmailOTPRequest):
+    def send_email_otp(db,payload: EmailOTPRequest):
         user = UserRegistrationRepository.get_user_by_email(db,payload.email)
         if user:
             return {"success": False, "message": "Email already registerd"}
@@ -24,7 +23,7 @@ class userRegistrationService:
             raise HTTPException(status_code=500, detail=f"Failed to send email OTP: {str(e)}")
         
     @staticmethod
-    def verify_email_otp(db: Session,payload: EmailOTPVerifyRequest):   
+    def verify_email_otp(db,payload: EmailOTPVerifyRequest):   
         record = OTPRepository.otp_store.get(payload.email)
         if not record:
             return {"success": False, "message": "OTP not sent for this email"}
@@ -38,14 +37,14 @@ class userRegistrationService:
         return {"success": False, "message": "Invalid Email OTP"}
     
     @staticmethod
-    def resend_email_otp(db: Session,payload: EmailOTPRequest):
+    def resend_email_otp(payload: EmailOTPRequest):
         try:
-            return OTPRepository.send_email_otp(db,payload)
+            return OTPRepository.send_email_otp(payload)
         except Exception as e:
             raise HTTPException(status_code=500, detail=f"Failed to resend email OTP: {str(e)}")
         
     @staticmethod
-    def send_mobile_otp(db: Session,payload: MobileOTPRequest):
+    def send_mobile_otp(db,payload: MobileOTPRequest):
         user = UserRegistrationRepository.get_user_by_mobile(db,payload.mobile)
         if user:
             return {"success": False, "message": "Mobile number alredy used"}
@@ -55,12 +54,12 @@ class userRegistrationService:
             raise HTTPException(status_code=500, detail=f"Failed to send mobile OTP: {str(e)}")
         
     @staticmethod
-    def resend_mobile_otp(db: Session,payload: MobileOTPRequest):
+    def resend_mobile_otp(payload: MobileOTPRequest):
      return userRegistrationService.send_mobile_otp(payload)
 
     @staticmethod
-    def verify_mobile_otp(db: Session,payload: VerifyMobileOTPRequest):
-        record = OTPRepository.mobile_otp_store.get(db,payload.mobile)
+    def verify_mobile_otp(db,payload: VerifyMobileOTPRequest):
+        record = OTPRepository.mobile_otp_store.get(payload.mobile)
         if not record:
             return {"success": False, "message": "OTP not sent for this mobile"}
 
@@ -74,28 +73,15 @@ class userRegistrationService:
 
     
     @staticmethod
-    def post_user(db: Session, user: User):
-        check = UserRegistrationRepository.check_user_exist(db, user)
-        
-        if check["exists"]:
-            fields = ", ".join(check["conflicts"])
-            return {
-                "success": False,
-                "data": user,
-                "message": f"The following field(s) already exist: {fields}"
-            }
-
+    def post_user(user: User):
+        isExist = UserRegistrationRepository.check_user_exist(user)
+        if isExist: 
+            return {"success": False, "data":user, "message": "User already exists"} 
+          
         try:
-            response = UserRegistrationRepository.post_user(db, user)
-            return {
-                "success": True,
-                "data": response,
-                "message": "User registered successfully"
-            }
+            response = UserRegistrationRepository.post_user(user)
+            return response
         except HTTPException as e:
             raise e
         except Exception as e:
-            raise HTTPException(
-                status_code=500,
-                detail=f"Registration failed: {str(e)}"
-            )
+            raise HTTPException(status_code=500, detail=f"Registration failed: {str(e)}")

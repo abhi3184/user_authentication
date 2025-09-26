@@ -38,7 +38,7 @@ export default function SendOTP({ userData, setUserData }) {
       const userDataToStore = { email, mobile };
       setUserData(userDataToStore);
       notify.show({ success: true, message: "OTP sent to both email & mobile" });
-      navigate("verify-otp");
+      navigate("/forgot-password/verify-otp");
       localStorage.setItem("forgotPasswordData", JSON.stringify(userDataToStore));
       localStorage.setItem("otpExpiry", emailRes.data.expires_at);
     } catch (err) {

@@ -22,7 +22,7 @@ function App() {
         {/* Auth routes */}
         <Route path="/login" element={<UserLogin />} />
         <Route path="/register/*" element={<UserRegistration />} />
-        <Route path="/forgot-password" element={<ForgotPasswordRoutes />} />
+        <Route path="/forgot-password/*" element={<ForgotPasswordRoutes />} />
 
         {/* Dashboard with nested routes */}
         <Route element={<ProtectedRoute />}>

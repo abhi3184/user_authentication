@@ -21,7 +21,8 @@ README.md
 -  Email OTP for password reset
 -  Modern UI (React + Tailwind)
 -  FastAPI + SQLAlchemy backend
-
+-  Password Format & Security
+----We use **bcrypt** for password hashing to ensure strong security
 ---
 
 
@@ -32,7 +33,7 @@ README.md
 ```bash
 cd backend
 pip install -r requirements.txt
-uvicorn main:app --reload
+uvicorn index:app --reload
 API will run at: http://localhost:8000
 
 ---
@@ -43,3 +44,4 @@ cd frontend
 npm install
 npm run dev
 Frontend will run at: http://localhost:5173
+
