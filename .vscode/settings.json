@@ -1,0 +1,6 @@
+{
+    "python.analysis.extraPaths": [
+        "./backEnd/src/scemas",
+        "./backEnd/src"
+    ]
+}
