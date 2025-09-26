@@ -48,7 +48,7 @@ Frontend will run at: http://localhost:5173
 ## 📸 Screenshots
 
 ### Login Page
-(./screenshots/login.png)
+![Login Page](./screenshots/login.png)
 
 ### Dashboard
 ![Dashboard](./screenshots/dashboard.png)
