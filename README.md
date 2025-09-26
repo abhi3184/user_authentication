@@ -45,3 +45,12 @@ npm install
 npm run dev
 Frontend will run at: http://localhost:5173
 
+## 📸 Screenshots
+
+### 🔐 Login Page
+![Login Page](./screenshots/login.png)
+
+### 📊 Dashboard
+![Dashboard](./screenshots/dashboard.png)
+
+
