@@ -48,7 +48,7 @@ Frontend will run at: http://localhost:5173
 ## 📸 Screenshots
 
 ### Login Page
-![Login Page](screenshots/login.png)
+[![Login Page](screenshots/login.png)](https://github.com/abhi3184/user_authentication/blob/main/screenshots/login.png?raw=true)
 
 ### Dashboard
 [![Dashboard](screenshots/login.png)](https://github.com/abhi3184/user_authentication/blob/dc4fbb648529c93a9820127123f8f9db850510ea/screenshots/dashboard.png)
