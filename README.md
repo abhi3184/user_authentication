@@ -66,6 +66,8 @@ Frontend will run at: http://localhost:5173
 ![SetPassword](./screenshots/setpassword.png)
 
 
+![image_url](https://github.com/abhi3184/user_authentication/blob/faee88f634a4efab747f3933b2c2af8179e7c62c/dashboard.png)
+
 
 
 
